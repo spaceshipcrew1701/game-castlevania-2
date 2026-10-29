@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Castlevania 2: Суд Ночі — Зміст</title>
+    <style>
+        body { background-color: #1a1a1a; color: #e0e0e0; font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1, h2 { color: #c77dff; border-bottom: 2px solid #9d4edd; padding-bottom: 5px; text-align: center; }
+        
+        /* Стиль для постера */
+        .poster-container { text-align: center; margin: 20px 0; }
+        .game-poster { max-width: 100%; max-height: 450px; border-radius: 8px; border: 2px solid #9d4edd; box-shadow: 0 4px 15px rgba(0,0,0,0.7); }
+
+        .section { background: rgba(0,0,0,0.6); padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        
+        /* Сітка для кнопок-сторінок */
+        .pages-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; margin-top: 15px; }
+        .page-link { 
+            display: block; padding: 10px; background: #2a2a2a; color: #9d4edd; 
+            text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold; 
+            border: 1px solid #9d4edd; transition: 0.2s;
+        }
+        .page-link:hover { background: #9d4edd; color: white; }
+    </style>
+</head>
+<body>
+
+    <h1>🏰 Castlevania 2: Суд Ночи</h1>
+    <p style="text-align: center;">Журнал второй части ролевой игры Каслвания - Суд Ночи.</p>
+
+    <!-- ПОСТЕР ГРИ -->
+    <div class="poster-container">
+        <img src="poster.png" alt="Постер Castlevania 2: Суд Ночі" class="game-poster">
+    </div>
+
+    <!-- БЛОК 1: ОСНОВНА ІСТОРІЯ (Сторінки 1 - 48) -->
+    <div class="section">
+        <h2>📖 Основная тема (Ход игры)</h2>
+        <div class="pages-grid" id="game-pages"></div>
+    </div>
+
+    <!-- БЛОК 2: ОБГОВОРЕННЯ ТА МАТЕРІАЛИ (Сторінки 49 - 60) -->
+    <div class="section">
+        <h2>🗺️ Обсуждение и квенты</h2>
+        <div class="pages-grid" id="lore-pages"></div>
+    </div>
+
+    <!-- Скрипт для автоматичної генерації кнопок -->
+    <script>
+        // Генерація сторінок гри (від 1 до 48)
+        const gameGrid = document.getElementById('game-pages');
+        for (let i = 1; i <= 48; i++) {
+            const a = document.createElement('a');
+            a.href = `page-${i}.html`;
+            a.className = 'page-link';
+            a.textContent = `Сторінка ${i}`;
+            gameGrid.appendChild(a);
+        }
+
+        // Генерація сторінок обговорення (від 49 до 60)
+        const loreGrid = document.getElementById('lore-pages');
+        for (let i = 49; i <= 60; i++) {
+            const a = document.createElement('a');
+            a.href = `page-${i}.html`;
+            a.className = 'page-link';
+            a.textContent = `Матеріали ${i}`;
+            loreGrid.appendChild(a);
+        }
+    </script>
+
+</body>
+</html>
